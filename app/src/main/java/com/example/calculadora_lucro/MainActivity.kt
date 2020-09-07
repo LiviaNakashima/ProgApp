@@ -22,24 +22,31 @@ class MainActivity : AppCompatActivity() {
         else{
             val lucro = et_receita.text.toString().toDouble() - et_custo.text.toString().toDouble()
             val margemLucro = (lucro/et_receita.text.toString().toDouble())*100
+            val msgLucroRuim = "Vixi, você só consegue R$${"%.2f".format(lucro)} de lucro com seu " +
+                    "produto ${et_produto.text}, isso significa que sua margem de lucro é de " +
+                    "${"%.2f".format(margemLucro)}%. Você precisa estudar mais para não sair no prejuízo"
 
+            val msgLucroMtBom = "MEU DEUS! você consegue R$${"%.2f".format(lucro)} de lucro com seu " +
+                    "produto ${et_produto.text}, isso significa que sua margem de lucro" +
+                    " é de ${"%.2f".format(margemLucro)}%.Você é o deus dos lucros!!!"
+
+            val msgLucroBom = "Caramba, você consegue R$${"%.2f".format(lucro)} de lucro com seu " +
+                    "produto ${et_produto.text}, isso significa que sua margem de lucro" +
+                    " é de ${"%.2f".format(margemLucro)}%.Você está se saindo bem!"
             when {
                 margemLucro < 50.0 -> {
                     tv_frase.visibility = View.VISIBLE
                     tv_frase.setTextColor(Color.RED)
-                    tv_frase.text = "Vixi, você só consegue R$${"%.2f".format(lucro)} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
-                            " é de ${"%.2f".format(margemLucro)}%.Você precisa estudar mais para não sair no prejuízo"
+                    tv_frase.text = msgLucroRuim
                 }
                 margemLucro > 70.0 -> {
                     tv_frase.visibility = View.VISIBLE
                     tv_frase.setTextColor(Color.GREEN)
-                    tv_frase.text = "MEU DEUS! você consegue R$${"%.2f".format(lucro)} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
-                            " é de ${"%.2f".format(margemLucro)}%.Você é o deus dos lucros!!!"
+                    tv_frase.text = msgLucroMtBom
                 }
                 else -> {
                     tv_frase.setTextColor(Color.BLUE)
-                    tv_frase.text = "Caramba, você consegue R$${"%.2f".format(lucro)} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
-                            " é de ${"%.2f".format(margemLucro)}%.Você está se saindo bem!"
+                    tv_frase.text = msgLucroBom
                     tv_frase.visibility = View.VISIBLE
                 }
             }
