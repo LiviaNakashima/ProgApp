@@ -56,6 +56,6 @@
         android:id="@+id/bt_01"
         app:layout_constraintTop_toBottomOf="@id/et_numero2"
         android:layout_marginTop="30dp"
-        /> <!--        android:onClick="clicar"-->
+        android:onClick="clicar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
