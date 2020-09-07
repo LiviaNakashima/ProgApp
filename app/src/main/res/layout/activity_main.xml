@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tv_segundo"
+        android:id="@+id/tv_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -19,34 +19,34 @@
         android:textAlignment="center"/>
 
     <EditText
-        android:id="@+id/et_texto"
+        android:id="@+id/et_produto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="Insira o nome do seu produto"
         android:inputType="text"
         android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_segundo"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"/>
 
     <EditText
-        android:id="@+id/et_numero1"
+        android:id="@+id/et_receita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="Insira sua receita total"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@+id/et_texto"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_produto"/>
 
     <EditText
-        android:id="@+id/et_numero2"
+        android:id="@+id/et_custo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="Insira os custos"
         android:inputType="numberDecimal"
         android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@+id/et_numero1"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_receita"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
         android:text="Clica em mim"
         android:textSize="25sp"
         android:id="@+id/bt_01"
-        app:layout_constraintTop_toBottomOf="@id/et_numero2"
+        app:layout_constraintTop_toBottomOf="@id/et_custo"
         android:layout_marginTop="30dp"
         android:onClick="clicar" />
 
