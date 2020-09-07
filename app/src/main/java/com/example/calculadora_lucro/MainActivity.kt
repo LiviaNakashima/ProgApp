@@ -24,22 +24,22 @@ class MainActivity : AppCompatActivity() {
             val margemLucro = (lucro/et_receita.text.toString().toDouble())*100
 
             when {
-                margemLucro < 35.0 -> {
+                margemLucro < 50.0 -> {
                     tv_frase.visibility = View.VISIBLE
                     tv_frase.setTextColor(Color.RED)
-                    tv_frase.text = "Vixi, você consegue R$${lucro.toString()} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
-                            " é de ${margemLucro}%.Você precisa estudar mais para não sair no prejuízo"
+                    tv_frase.text = "Vixi, você só consegue R$${"%.2f".format(lucro)} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
+                            " é de ${"%.2f".format(margemLucro)}%.Você precisa estudar mais para não sair no prejuízo"
                 }
-                margemLucro > 50.0 -> {
+                margemLucro > 70.0 -> {
                     tv_frase.visibility = View.VISIBLE
                     tv_frase.setTextColor(Color.GREEN)
-                    tv_frase.text = "MEU DEUS! você consegue R$${lucro} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
-                            " é de ${margemLucro}%.Você é o deus dos lucros!!!"
+                    tv_frase.text = "MEU DEUS! você consegue R$${"%.2f".format(lucro)} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
+                            " é de ${"%.2f".format(margemLucro)}%.Você é o deus dos lucros!!!"
                 }
                 else -> {
                     tv_frase.setTextColor(Color.BLUE)
-                    tv_frase.text = "Caramba, você consegue R$${lucro} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
-                            " é de ${margemLucro}%.Você está se saindo bem!"
+                    tv_frase.text = "Caramba, você consegue R$${"%.2f".format(lucro)} de lucro com seu produto ${et_produto.text}, isso significa que sua margem de lucro" +
+                            " é de ${"%.2f".format(margemLucro)}%.Você está se saindo bem!"
                     tv_frase.visibility = View.VISIBLE
                 }
             }
